@@ -377,6 +377,14 @@ module SimpleCov
       groups[group_name] = parse_filter(filter_argument, &filter_proc)
     end
 
+    #
+    # Remove an existing group
+    # `group_name` is *case-sensitive*
+    #
+    def remove_group(group_name)
+      groups.delete(group_name)
+    end
+
     SUPPORTED_COVERAGE_CRITERIA = %i[line branch].freeze
     DEFAULT_COVERAGE_CRITERION = :line
     #
